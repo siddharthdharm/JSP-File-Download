@@ -7,19 +7,20 @@
 <%@ page import ="javax.servlet.http.HttpServletResponse" %>
 
 <%    
+
   String filename = "castle.jpg";     // FILE NAME WITH EXTENSION//
-  String filepath = "E:\\";           // ABSOLUTE FILE PATH //  
+  String filepath = "E:\\";           // ABSOLUTE FILE PATH ON SERVER WITH PROPER ESCAPE SEQUENCES //
+
   response.setContentType("APPLICATION/OCTET-STREAM");   
   response.setHeader("Content-Disposition","attachment; filename=\"" + filename + "\"");   
   
-  java.io.FileInputStream fileInputStream=new java.io.FileInputStream(filepath + filename);  
+  java.io.FileInputStream fileInputStream = new java.io.FileInputStream(filepath + filename);
             
   int i;   
-  while ((i=fileInputStream.read()) != -1) {  
+  while ((i = fileInputStream.read()) != -1) {  
     out.write(i);   
   }   
+  
   fileInputStream.close();   
-%>
 
-<%-- USING INLINE STUFF --%>
-<%-- response.setHeader("Content-Disposition","inline; filename=\"" + filename + "\""); --%>
+%>
