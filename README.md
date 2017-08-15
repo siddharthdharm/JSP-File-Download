@@ -1,6 +1,6 @@
 # A Simple File Download Application using Java Server Pages (JSP)
 
-A simple script in Java to download a particular file from the server.
+A simple script in Java to download a particular file from the server. The **main advantage** of this over inline script is that this method will not expose your server directory structure while downloading the file (on the URL bar).
 
 <br>
 
